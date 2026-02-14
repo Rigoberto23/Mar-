@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Flores animadas</title>
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  background: radial-gradient(circle at center,#0b1d26,#02070a);
+  overflow:hidden;
+  font-family:sans-serif;
+}
+.garden{
+  position:relative;
+  width:400px;
+  height:400px;
+}
+.flower{
+  position:absolute;
+  bottom:0;
+  transform-origin:bottom center;
+  animation: grow 3s ease forwards;
+}
+.stem{
+  width:6px;
+  height:0;
+  background:linear-gradient(#2ecc71,#145a32);
+  margin:auto;
+  border-radius:10px;
+  animation: stemGrow 3s ease forwards;
+}
+.petals{
+  position:relative;
+  width:0;
+  height:0;
+  opacity:0;
+  animation:bloom 2s ease forwards;
+  animation-delay:2.6s;
+}
+.petal{
+  position:absolute;
+  width:26px;
+  height:40px;
+  background:#ff4d4d;
+  border-radius:50% 50% 40% 40%;
+  transform-origin:bottom center;
+}
+.center{
+  position:absolute;
+  width:20px;
+  height:20px;
+  background:#ffd166;
+  border-radius:50%;
+  top:18px;
+  left:3px;
+}
+.petal:nth-child(1){transform:rotate(0deg) translateY(-25px);} 
+.petal:nth-child(2){transform:rotate(72deg) translateY(-25px);} 
+.petal:nth-child(3){transform:rotate(144deg) translateY(-25px);} 
+.petal:nth-child(4){transform:rotate(216deg) translateY(-25px);} 
+.petal:nth-child(5){transform:rotate(288deg) translateY(-25px);} 
+@keyframes stemGrow{
+  from{height:0}
+  to{height:160px}
+}
+@keyframes bloom{
+  from{transform:scale(0);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+@keyframes grow{
+  from{transform:scaleY(0.1)}
+  to{transform:scaleY(1)}
+}
+.grass{
+  position:absolute;
+  bottom:0;
+  width:8px;
+  height:120px;
+  background:linear-gradient(#1abc9c,#145a32);
+  border-radius:50px;
+  transform-origin:bottom;
+  animation:grass 2s ease forwards;
+}
+@keyframes grass{
+  from{transform:scaleY(0)}
+  to{transform:scaleY(1)}
+}
+</style>
+</head>
+<body>
+<div class="garden">
+  <div class="flower" style="left:80px; animation-delay:0s">
+    <div class="stem"></div>
+    <div class="petals">
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="center"></div>
+    </div>
+  </div>
+  <div class="flower" style="left:180px; animation-delay:.7s">
+    <div class="stem"></div>
+    <div class="petals">
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="center"></div>
+    </div>
+  </div>
+  <div class="flower" style="left:280px; animation-delay:1.4s">
+    <div class="stem"></div>
+    <div class="petals">
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="center"></div>
+    </div>
+  </div>
+  <div class="grass" style="left:40px"></div>
+  <div class="grass" style="left:120px;height:90px"></div>
+  <div class="grass" style="left:220px;height:110px"></div>
+  <div class="grass" style="left:340px;height:95px"></div>
+</div>
+</body>
+</html>
